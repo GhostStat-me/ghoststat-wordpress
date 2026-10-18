@@ -1,0 +1,146 @@
+/* GhostStat admin screens and dashboard widget. Colours from the GhostStat app: green #1FA463, blue #2A6FE8. */
+.ghoststat-wrap { max-width: 1200px; }
+.ghoststat-h1 { margin-bottom: 14px !important; }
+.ghoststat-panel { background: #fff; border: 1px solid #dcdcde; border-radius: 8px; padding: 16px 18px; margin: 0 0 16px; box-sizing: border-box; min-width: 0; }
+.ghoststat-panel h2 { font-size: 14px; margin: 0; }
+.ghoststat-panel-h { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+.ghoststat-col { font-size: 12px; color: #646970; }
+
+/* toolbar */
+.ghoststat-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin: 0 0 16px; }
+.ghoststat-ranges { display: flex; flex-wrap: wrap; gap: 4px; background: #fff; border: 1px solid #dcdcde; border-radius: 8px; padding: 3px; }
+.ghoststat-ranges a { text-decoration: none; padding: 5px 10px; border-radius: 6px; color: #2c3338; font-size: 13px; }
+.ghoststat-ranges a:hover { background: #f0f6fc; }
+.ghoststat-ranges a.current { background: #1FA463; color: #fff; }
+.ghoststat-actions { display: flex; gap: 6px; align-items: center; }
+.ghoststat-actions form { margin: 0; }
+
+/* headline cards */
+.ghoststat-cards, .ghoststat-scores { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 0 0 16px; }
+.ghoststat-card, .ghoststat-score { background: #fff; border: 1px solid #dcdcde; border-radius: 8px; padding: 12px 14px; }
+.ghoststat-card .k, .ghoststat-score .k { font-size: 12px; color: #646970; display: flex; align-items: center; gap: 6px; }
+.ghoststat-card .v, .ghoststat-score .v { font-size: 24px; font-weight: 600; line-height: 1.3; color: #1d2327; margin-top: 2px; font-variant-numeric: tabular-nums; }
+.ghoststat-card.live .dot { width: 8px; height: 8px; border-radius: 50%; background: #1FA463; box-shadow: 0 0 0 3px rgba(31, 164, 99, .2); }
+
+/* chart */
+.ghoststat-chart, .ghoststat-triad { display: block; width: 100%; height: auto; }
+.ghoststat-chart .grid, .ghoststat-triad .grid { stroke: #f0f0f1; stroke-width: 1; }
+.ghoststat-chart .axis, .ghoststat-triad .axis { fill: #8c8f94; font-size: 11px; }
+.ghoststat-chart .line, .ghoststat-spark .line, .ghoststat-triad .line { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.ghoststat-chart .line.visitors, .ghoststat-spark .line.visitors { stroke: #1FA463; }
+.ghoststat-chart .line.pageviews { stroke: #2A6FE8; stroke-dasharray: 4 3; }
+.ghoststat-chart .area, .ghoststat-spark .area { fill: rgba(31, 164, 99, .10); }
+.ghoststat-chart .hit, .ghoststat-triad .hit { fill: transparent; }
+.ghoststat-chart .hit:hover, .ghoststat-triad .hit:hover { fill: rgba(42, 111, 232, .06); }
+.ghoststat-legend { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #50575e; }
+.ghoststat-legend .sw { display: inline-block; width: 14px; height: 3px; border-radius: 2px; margin-left: 8px; }
+.ghoststat-legend .sw.visitors { background: #1FA463; }
+.ghoststat-legend .sw.pageviews { background: #2A6FE8; }
+
+/* bar lists */
+.ghoststat-grid, .ghoststat-intel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px; }
+.ghoststat-grid .ghoststat-panel, .ghoststat-intel-grid .ghoststat-panel { margin: 0; }
+.ghoststat-bars, .ghoststat-shares { display: flex; flex-direction: column; gap: 4px; }
+.ghoststat-bars .row, .ghoststat-shares .row { position: relative; display: flex; align-items: center; gap: 10px; padding: 5px 8px; border-radius: 5px; overflow: hidden; min-width: 0; }
+.ghoststat-bars .fill, .ghoststat-shares .fill { position: absolute; left: 0; top: 0; bottom: 0; background: rgba(31, 164, 99, .12); border-radius: 5px; }
+.ghoststat-bars .label, .ghoststat-shares .label { position: relative; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; color: #1d2327; }
+.ghoststat-bars .num, .ghoststat-shares .num { position: relative; font-size: 13px; font-variant-numeric: tabular-nums; color: #2c3338; }
+.ghoststat-empty { color: #646970; margin: 0; }
+.ghoststat-foot { color: #646970; font-size: 12px; margin-top: 16px; }
+
+/* connect + settings */
+.ghoststat-connect ol { margin: 10px 0 14px 18px; }
+.ghoststat-connect li { margin-bottom: 6px; }
+.ghoststat-form h2 { margin-top: 6px; }
+.ghoststat-form .form-table { margin-top: 0; }
+.ghoststat-role { display: inline-block; margin: 0 16px 6px 0; }
+.ghoststat-form .form-table td fieldset label.ghoststat-role { margin-right: 18px !important; } /* WP forms.css sets fieldset label margins with !important */
+.ghoststat-check .button { margin-top: 6px; }
+.ghoststat-privacy ul { list-style: disc; margin: 8px 0 8px 18px; }
+.ghoststat-privacy li { color: #50575e; }
+.ghoststat-checkmsg { margin: 0 0 12px !important; }
+
+/* dashboard widget */
+.ghoststat-widget h3 { font-size: 13px; margin: 14px 0 6px; }
+.ghoststat-wnums { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 8px; }
+.ghoststat-wnums .v { font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.ghoststat-wnums .k { font-size: 12px; color: #646970; }
+.ghoststat-spark { display: block; width: 100%; height: 48px; }
+.ghoststat-wfoot { margin: 10px 0 0; }
+
+@media (max-width: 782px) {
+	.ghoststat-chart .axis, .ghoststat-triad .axis { font-size: 24px; } /* the chart is drawn 1000 units wide and shrinks to the phone */
+	.ghoststat-grid, .ghoststat-intel-grid { grid-template-columns: 1fr; }
+	.ghoststat-card .v, .ghoststat-score .v { font-size: 20px; }
+	.ghoststat-toolbar { flex-direction: column; align-items: stretch; }
+}
+
+/* ---- 1.1: Visitor Intelligence (colours as in the GhostStat app: intent green, frustration red, attention blue) ---- */
+.ghoststat-intel { margin: 8px 0 16px; }
+.ghoststat-intel-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 0 0 12px; }
+.ghoststat-intel-head h2 { font-size: 18px; margin: 2px 0 4px; }
+.ghoststat-intel-head p { margin: 0; color: #50575e; max-width: 640px; }
+.ghoststat-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #1FA463; }
+.ghoststat-why { font-size: 13px; text-decoration: none; white-space: nowrap; }
+.ghoststat-why:hover { text-decoration: underline; }
+.ghoststat-scores { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-bottom: 8px; }
+.ghoststat-score .v .of { font-size: 13px; font-weight: 400; color: #646970; margin-left: 2px; }
+.ghoststat-meter { height: 6px; border-radius: 3px; background: #f0f0f1; margin: 8px 0 6px; overflow: hidden; }
+.ghoststat-meter span { display: block; height: 100%; border-radius: 3px; }
+.ghoststat-score.gs-intent .ghoststat-meter span { background: #1FA463; }
+.ghoststat-score.gs-frustration .ghoststat-meter span { background: #DC2626; }
+.ghoststat-score.gs-attention .ghoststat-meter span { background: #2A6FE8; }
+.ghoststat-score.gs-intent .k::before, .ghoststat-score.gs-frustration .k::before, .ghoststat-score.gs-attention .k::before { content: ""; width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.ghoststat-score.gs-intent .k::before { background: #1FA463; }
+.ghoststat-score.gs-frustration .k::before { background: #DC2626; }
+.ghoststat-score.gs-attention .k::before { background: #2A6FE8; }
+.ghoststat-delta { font-size: 12px; color: #646970; }
+.ghoststat-delta.good { color: #137a46; }
+.ghoststat-delta.bad { color: #b32d2e; }
+.ghoststat-what { font-size: 12px; color: #646970; margin-top: 4px; }
+.ghoststat-scored { font-size: 12px; color: #646970; margin: 0 0 16px; }
+.ghoststat-panel-f { margin-top: 10px; text-align: right; }
+.ghoststat-triad .line.gs-intent { stroke: #1FA463; }
+.ghoststat-triad .line.gs-frustration { stroke: #DC2626; }
+.ghoststat-triad .line.gs-attention { stroke: #2A6FE8; }
+.ghoststat-triad .dot.gs-intent { fill: #1FA463; }
+.ghoststat-triad .dot.gs-frustration { fill: #DC2626; }
+.ghoststat-triad .dot.gs-attention { fill: #2A6FE8; }
+.ghoststat-legend .sw.gs-intent { background: #1FA463; }
+.ghoststat-legend .sw.gs-frustration { background: #DC2626; }
+.ghoststat-legend .sw.gs-attention { background: #2A6FE8; }
+.ghoststat-shares.personas .fill { background: rgba(139, 92, 246, .14); }
+.ghoststat-shares.journey .fill { background: rgba(42, 111, 232, .12); }
+.ghoststat-intel .ghoststat-intel-grid { margin-bottom: 16px; }
+.ghoststat-pagelist { list-style: none; margin: 0; padding: 0; counter-reset: gsp; }
+.ghoststat-pagelist li { display: grid; grid-template-columns: minmax(0, 1fr) 90px 34px 60px auto; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid #f0f0f1; font-size: 13px; }
+.ghoststat-pagelist li:last-child { border-bottom: 0; }
+.ghoststat-path { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: Consolas, Monaco, monospace; font-size: 12px; }
+.ghoststat-mini { height: 6px; border-radius: 3px; background: #f0f0f1; overflow: hidden; }
+.ghoststat-mini span { display: block; height: 100%; background: #DC2626; border-radius: 3px; }
+.ghoststat-fnum { font-weight: 600; color: #b32d2e; text-align: right; font-variant-numeric: tabular-nums; }
+.ghoststat-visits { color: #646970; text-align: right; font-variant-numeric: tabular-nums; }
+
+/* "More in GhostStat" band */
+.ghoststat-band { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 20px; background: #0f172a; color: #e2e8f0; border-radius: 10px; padding: 22px 24px; margin: 8px 0 16px; }
+.ghoststat-band h2 { color: #fff; font-size: 18px; margin: 4px 0 8px; }
+.ghoststat-band p { color: #cbd5e1; margin: 0 0 14px; }
+.ghoststat-band .ghoststat-eyebrow { color: #26E08A; }
+.ghoststat-band-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.ghoststat-band-list a { display: block; height: 100%; box-sizing: border-box; padding: 10px 12px; border: 1px solid rgba(255, 255, 255, .12); border-radius: 8px; text-decoration: none; color: #e2e8f0; }
+.ghoststat-band-list a:hover, .ghoststat-band-list a:focus { border-color: #26E08A; background: rgba(38, 224, 138, .06); }
+.ghoststat-band-list strong { display: block; color: #fff; font-size: 13px; margin-bottom: 2px; }
+.ghoststat-band-list span { font-size: 12px; color: #94a3b8; }
+
+/* settings: last software report */
+.ghoststat-swstatus { margin: 10px 0 0; font-size: 13px; }
+.ghoststat-swstatus.ok { color: #137a46; }
+.ghoststat-swstatus.bad { color: #b32d2e; }
+
+@media (max-width: 782px) {
+	.ghoststat-band { grid-template-columns: 1fr; padding: 18px; }
+	.ghoststat-pagelist li { grid-template-columns: minmax(0, 1fr) 34px auto; }
+	.ghoststat-pagelist .ghoststat-mini, .ghoststat-pagelist .ghoststat-visits { display: none; }
+	.ghoststat-panel-f { text-align: left; }
+}
+.ghoststat-getkey { margin: 0 0 6px; }
